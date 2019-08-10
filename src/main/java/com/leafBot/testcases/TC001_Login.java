@@ -3,10 +3,10 @@ package com.leafBot.testcases;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.leaftaps.base.ProjectSpecificMethods;
-import com.leaftaps.leads.pages.LoginPage;
+import com.leafBot.pages.LoginPage;
 
-public class TC001_Login extends ProjectSpecificMethods {
+
+public class TC001_Login extends com.leafBot.testng.api.base.ProjectSpecificMethods {
 	@BeforeTest
 	public void setData() {
 		excelFileName="TC001";

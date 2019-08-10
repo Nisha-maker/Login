@@ -1,5 +1,7 @@
 package com.leafBot.pages;
 
+import org.openqa.selenium.WebElement;
+
 import com.leafBot.testng.api.base.ProjectSpecificMethods;
 
 public class LoginPage extends ProjectSpecificMethods {
@@ -7,22 +9,24 @@ public class LoginPage extends ProjectSpecificMethods {
 	public LoginPage() { // Pagefactory code
 	}
 
-	public LoginPage enterUsername(String data) {
-		driver.findElementById("username").sendKeys(data);
-		return this;
+	public void enterUsername(String data) {
+		
+		WebElement elUsername = locateElement("id", "username");
+		clearAndType(elUsername, data);
+
 	}
 
-	public LoginPage enterPassword(String data) {
-		driver.findElementById("password").sendKeys(data);
-		return this;
+public void enterPassword(String data) {
+		
+		WebElement elpassword = locateElement("id", "password");
+		clearAndType(elpassword, data);
+
 	}
 
-	public HomePage clickLogin() {
-		driver.findElementByClassName("decorativeSubmit").click();
-		/*
-		 * HomePage page = new HomePage(); return page;
-		 */
-		return new HomePage();
-	}
-
+public void clickLogin() {
+	
+	WebElement Login = locateElement("LinkText", "Login");
+	click(Login);
+	
+}
 }
